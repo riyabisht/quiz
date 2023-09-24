@@ -79,14 +79,12 @@ public class HomeScreen implements ActionListener {
         gbc.gridy = 1;
         row3Panel.add(nextButton, gbc);
 
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event){
-                nextQuestion();
-            }
+        nextButton.addActionListener(this);
 
-        });
+        @Override
+        public void actionPerformed(ActionEvent event){
 
+        }
        Container contentPanel = frame.getContentPane();
        contentPanel.setLayout(new BoxLayout(contentPanel,BoxLayout.Y_AXIS));
        contentPanel.add(questionPanel);
