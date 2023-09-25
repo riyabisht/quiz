@@ -17,20 +17,18 @@ public class Quiz {
         return quiz;
     }
 
-    private void generateQuestions(QuestionsProvider questionsProvider, HomeScreen homeScreen) {
-        for (Question question : questionsProvider.getQuestions()) {
-            homeScreen.createAndShowGUI(question);
-        }
+    // private void generateQuestions(QuestionsProvider questionsProvider, HomeScreen homeScreen) {
+    //     for (Question question : questionsProvider.getQuestions()) {
+    //         homeScreen.initialiseGUI(question);
+    //     }
   
     
-    }
+    // }
     
     public static void main(String[] args) {
         Quiz quiz = Quiz.getQuiz();
-        HomeScreen homeScreen = HomeScreen.getHomeScreen();
         QuestionsProvider questionsProvider = QuestionsProvider.getQuestionsProvider();
-        quiz.generateQuestions(questionsProvider, homeScreen);
-        
+        HomeScreen homeScreen = new HomeScreen(questionsProvider.getQuestions());        
     }
 
     
